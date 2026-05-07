@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard 🍓</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Strawberry favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍓</text></svg>" />
+</head>
+<body>
+
+  <!-- Name Modal -->
+  <div id="name-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icon">🌸</div>
+      <h2>What's your name?</h2>
+      <input type="text" id="name-input" placeholder="Enter your name..." maxlength="30" />
+      <button id="name-save-btn">Let's Go!</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div id="greeting-section">
+      <h1 id="greeting-text">Hello!</h1>
+      <p id="datetime-text"></p>
+    </div>
+    <div id="header-controls">
+      <button id="edit-name-btn" title="Edit name">✏️</button>
+      <button id="delete-name-btn" title="Delete name">✖</button>
+      <button id="theme-toggle" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Weather / Location -->
+    <section class="card" id="weather-section">
+      <h2>📍 My Location</h2>
+      <div id="weather-content">
+        <p id="weather-loading">Detecting location...</p>
+      </div>
+    </section>
+
+    <!-- Focus Timer -->
+    <section class="card">
+      <h2>🍅 Focus Timer</h2>
+      <div id="timer-display">25:00</div>
+      <div id="timer-progress-wrap">
+        <div id="timer-progress-bar"></div>
+      </div>
+      <div class="timer-duration-row">
+        <label for="custom-duration">Minutes:</label>
+        <input type="number" id="custom-duration" min="1" max="120" value="25" />
+        <button id="apply-duration-btn">Apply</button>
+      </div>
+      <div id="timer-controls">
+        <button id="start-btn">▶ Start</button>
+        <button id="stop-btn">⏸ Stop</button>
+        <button id="reset-btn">🔄 Reset</button>
+      </div>
+    </section>
+
+    <!-- To-Do List -->
+    <section class="card">
+      <h2>📝 To-Do List</h2>
+      <div class="input-row">
+        <input type="text" id="todo-input" placeholder="Add a task..." maxlength="100" />
+        <button id="todo-add-btn">Add</button>
+      </div>
+      <div class="sort-row">
+        <label for="sort-select">Sort:</label>
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+          <option value="done">Done Last</option>
+        </select>
+        <span id="todo-counter"></span>
+        <button id="clear-done-btn" title="Clear all done tasks">🗑 Clear Done</button>
+      </div>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="card">
+      <h2>🔗 Quick Links</h2>
+      <div class="input-row">
+        <input type="text" id="link-name-input" placeholder="Label" maxlength="30" />
+        <input type="url" id="link-url-input" placeholder="URL" />
+        <button id="link-add-btn">Add</button>
+      </div>
+      <div id="links-container"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>✨ Made with love & strawberry vibes 🍓</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
